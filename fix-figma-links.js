@@ -35,6 +35,14 @@ async function run() {
   console.log(componentNodes);
 
   // Now update the story files
+  const nameMap = {
+    'input': 'field',
+    'progress-bar': 'progress bar',
+    'segmented-control': 'segmented control',
+    'menu': 'menu item list',
+    'dialog': 'dialog'
+  };
+
   const storiesDir = path.join(__dirname, 'projects/lucent-ui/src/lib');
   const components = fs.readdirSync(storiesDir).filter(f => f.startsWith('lucent-'));
   
@@ -44,12 +52,16 @@ async function run() {
     if (!fs.existsSync(storyFile)) continue;
     
     // Find matching node
-    // Figma names might be "Button", "Text Input", etc.
-    let nodeId = null;
-    for (const [name, id] of Object.entries(componentNodes)) {
-      if (name.includes(compName) || compName.includes(name)) {
-        nodeId = id;
-        break;
+    const figmaName = nameMap[compName] || compName.replace(/-/g, ' ');
+    let nodeId = componentNodes[figmaName];
+    
+    // Fallback search if exact name map fails
+    if (!nodeId) {
+      for (const [name, id] of Object.entries(componentNodes)) {
+        if (name.includes(compName) || compName.includes(name)) {
+          nodeId = id;
+          break;
+        }
       }
     }
     

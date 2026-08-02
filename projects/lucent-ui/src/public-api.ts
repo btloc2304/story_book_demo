@@ -12,3 +12,8 @@ export * from './lib/lucent-radio/lucent-radio.component';
 export * from './lib/lucent-accordion/lucent-accordion.component';
 export * from './lib/lucent-tab/lucent-tab.component';
 export * from './lib/lucent-icon/lucent-icon.component';
+export * from './lib/lucent-progress-bar/lucent-progress-bar.component';
+export * from './lib/lucent-segmented-control/lucent-segmented-control.component';
+export * from './lib/lucent-slider/lucent-slider.component';
+export * from './lib/lucent-dialog/lucent-dialog.component';
+export * from './lib/lucent-menu/lucent-menu.component';

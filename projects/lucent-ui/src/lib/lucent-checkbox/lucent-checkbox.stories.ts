@@ -6,7 +6,7 @@ const meta: Meta<LucentCheckboxComponent> = {
   component: LucentCheckboxComponent,
   tags: ['autodocs'],
   parameters: {
-    design: { type: 'figma', url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI?node-id=68-1968&m=dev' },
+    design: { type: 'figma', url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI?node-id=4428-1317&m=dev' },
   },
 };
 export default meta;

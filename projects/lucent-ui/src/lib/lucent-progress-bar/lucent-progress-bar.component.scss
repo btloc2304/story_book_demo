@@ -1,0 +1,50 @@
+.lucent-progress-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.lucent-progress-bar-track {
+  flex-grow: 1;
+  height: 8px;
+  background-color: var(--color-gray-200);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.lucent-progress-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease-in-out, background-color 0.3s ease;
+  
+  &.primary {
+    background-color: var(--color-primary);
+  }
+  
+  &.success {
+    background-color: var(--color-green-500);
+  }
+  
+  &.warning {
+    background-color: var(--color-yellow-500);
+  }
+  
+  &.error {
+    background-color: var(--color-red-500);
+  }
+  
+  &.ghost {
+    background-color: var(--color-gray-500);
+  }
+}
+
+.lucent-progress-bar-label {
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--color-gray-700);
+  min-width: 40px;
+  text-align: right;
+  font-weight: 500;
+}
