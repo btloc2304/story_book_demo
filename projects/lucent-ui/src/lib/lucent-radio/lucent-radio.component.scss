@@ -1,0 +1,61 @@
+@import '../../styles/variables';
+
+.lucent-radio-wrapper {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: $font-family;
+  gap: 8px;
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.lucent-radio-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.lucent-radio-custom {
+  position: relative;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  border: 1px solid $secondary-color;
+  border-radius: 50%;
+  transition: all 0.2s;
+
+  .lucent-radio-input:checked ~ & {
+    border-color: $primary-color;
+  }
+
+  .lucent-radio-input:focus-visible ~ & {
+    box-shadow: 0 0 0 3px rgba(49, 134, 255, 0.2);
+  }
+}
+
+.lucent-radio-custom:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $primary-color;
+}
+
+.lucent-radio-input:checked ~ .lucent-radio-custom:after {
+  display: block;
+}
+
+.lucent-radio-label {
+  font-size: 14px;
+  color: $text-color;
+}

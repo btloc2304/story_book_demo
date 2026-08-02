@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.lucent-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-family: $font-family;
+  font-weight: 500;
+  line-height: 1;
+
+  &--small { font-size: 10px; padding: 2px 6px; }
+  &--medium { font-size: 12px; padding: 4px 8px; }
+  &--large { font-size: 14px; padding: 6px 12px; }
+
+  &--default { background-color: #E2E8F0; color: #1E293B; }
+  &--success { background-color: #DCFCE7; color: #166534; }
+  &--warning { background-color: #FEF9C3; color: #854D0E; }
+  &--error { background-color: #FEE2E2; color: #991B1B; }
+  &--info { background-color: #DBEAFE; color: #1E40AF; }
+}

@@ -1,0 +1,80 @@
+@import '../../styles/variables';
+
+.lucent-checkbox-wrapper {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: $font-family;
+  gap: 8px;
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.lucent-checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.lucent-checkbox-custom {
+  position: relative;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  border: 1px solid $secondary-color;
+  border-radius: 4px;
+  transition: all 0.2s;
+
+  .lucent-checkbox-input:checked ~ & {
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+
+  .lucent-checkbox-input:focus-visible ~ & {
+    box-shadow: 0 0 0 3px rgba(49, 134, 255, 0.2);
+  }
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.lucent-checkbox-custom:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.lucent-checkbox-input:checked ~ .lucent-checkbox-custom:after {
+  display: block;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.lucent-checkbox-input:indeterminate ~ .lucent-checkbox-custom {
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+.lucent-checkbox-input:indeterminate ~ .lucent-checkbox-custom:after {
+  display: block;
+  left: 4px;
+  top: 8px;
+  width: 8px;
+  height: 2px;
+  background-color: white;
+  border: none;
+  transform: none;
+}
+
+.lucent-checkbox-label {
+  font-size: 14px;
+  color: $text-color;
+}

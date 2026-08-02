@@ -1,0 +1,11 @@
+$primary-color: #3186FF;
+$secondary-color: #E2E8F0;
+$text-color: #1E293B;
+$border-radius: 6px;
+$font-family: 'Inter', sans-serif;
+[data-theme="dark"] {
+  $text-color: #F1F5F9;
+  $secondary-color: #334155;
+  background-color: #0F172A;
+  color: #F1F5F9;
+}

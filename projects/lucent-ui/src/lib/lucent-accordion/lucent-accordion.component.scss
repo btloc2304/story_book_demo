@@ -1,0 +1,46 @@
+@import '../../styles/variables';
+
+.lucent-accordion {
+  border: 1px solid $secondary-color;
+  border-radius: $border-radius;
+  font-family: $font-family;
+  overflow: hidden;
+}
+
+.lucent-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #F8FAFC;
+  }
+}
+
+.lucent-accordion-title {
+  font-weight: 500;
+  color: $text-color;
+}
+
+.lucent-accordion-icon {
+  display: flex;
+  transition: transform 0.3s;
+  color: #64748B;
+
+  &.expanded {
+    transform: rotate(180deg);
+  }
+}
+
+.lucent-accordion-content {
+  padding: 16px;
+  border-top: 1px solid $secondary-color;
+  background-color: #F8FAFC;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.5;
+}

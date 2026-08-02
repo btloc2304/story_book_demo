@@ -1,0 +1,9 @@
+.lucent-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  &.size-small { width: 16px; height: 16px; }
+  &.size-medium { width: 24px; height: 24px; }
+  &.size-large { width: 32px; height: 32px; }
+}

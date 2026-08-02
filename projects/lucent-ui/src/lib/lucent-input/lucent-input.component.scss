@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+
+.lucent-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: $font-family;
+}
+
+.lucent-input-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: $text-color;
+}
+
+.lucent-input {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid $secondary-color;
+  border-radius: $border-radius;
+  outline: none;
+  transition: all 0.2s ease;
+  color: $text-color;
+
+  &::placeholder {
+    color: #94A3B8;
+  }
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba(49, 134, 255, 0.1);
+  }
+
+  &:disabled {
+    background-color: #F8FAFC;
+    cursor: not-allowed;
+    color: #94A3B8;
+  }
+
+  &--error {
+    border-color: #EF4444;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+  }
+}
+
+.lucent-input-error {
+  font-size: 12px;
+  color: #EF4444;
+}
