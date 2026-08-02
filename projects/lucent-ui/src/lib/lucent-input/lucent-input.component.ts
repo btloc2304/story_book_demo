@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
     <div class="lucent-input-wrapper">
       <label *ngIf="label" class="lucent-input-label" [for]="id">{{ label }}</label>
       <input
-        [id]="id"
         [type]="type"
         [placeholder]="placeholder"
         [value]="value"
