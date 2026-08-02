@@ -1,0 +1,37 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Lucent UI/Design Tokens/Colors" />
+
+# 🎨 Bảng Màu (Color Palette)
+
+Lucent UI tuân thủ hệ thống màu sắc đơn giản nhưng hiện đại, hỗ trợ hoàn toàn cả chế độ Light Mode và Dark Mode.
+Dưới đây là các mã màu gốc được sử dụng xuyên suốt bộ thư viện.
+
+<br />
+
+<ColorPalette>
+  <ColorItem
+    title="Primary"
+    subtitle="Màu chủ đạo"
+    colors={{ Primary: '#3186FF' }}
+  />
+  <ColorItem
+    title="Secondary"
+    subtitle="Màu phụ / Nền phụ"
+    colors={{ Secondary: '#E2E8F0', DarkMode: '#334155' }}
+  />
+  <ColorItem
+    title="Text"
+    subtitle="Màu chữ mặc định"
+    colors={{ LightMode: '#1E293B', DarkMode: '#F1F5F9' }}
+  />
+  <ColorItem
+    title="Background"
+    subtitle="Màu Nền"
+    colors={{ DarkMode: '#0F172A' }}
+  />
+</ColorPalette>
+
+---
+
+> **Lưu ý:** Trong mã nguồn, các biến màu này được khai báo ở file `_variables.scss` dưới dạng `$primary-color`, `$secondary-color`, v.v.

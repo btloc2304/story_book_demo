@@ -6,7 +6,7 @@ const meta: Meta<LucentRadioComponent> = {
   component: LucentRadioComponent,
   tags: ['autodocs'],
   parameters: {
-    design: { type: 'figma', url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI' },
+    design: { type: 'figma', url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI?node-id=1142-731&m=dev' },
   },
 };
 export default meta;

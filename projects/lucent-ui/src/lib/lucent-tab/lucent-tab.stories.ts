@@ -6,7 +6,7 @@ const meta: Meta<LucentTabComponent> = {
   component: LucentTabComponent,
   tags: ['autodocs'],
   parameters: {
-    design: { type: 'figma', url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI' },
+    design: { type: 'figma', url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI?node-id=136-30&m=dev' },
   },
 };
 export default meta;

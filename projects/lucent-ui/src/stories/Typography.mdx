@@ -1,0 +1,50 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title="Lucent UI/Design Tokens/Typography" />
+
+export const typography = {
+  type: {
+    primary: '"Inter", sans-serif',
+  },
+  weight: {
+    regular: '400',
+    medium: '500',
+    bold: '700',
+  },
+  size: {
+    s1: 12,
+    s2: 14,
+    s3: 16,
+    m1: 20,
+    l1: 24,
+    l2: 32,
+  },
+};
+
+export const SampleText = 'Design System Lucent UI: Chuyên nghiệp, Nhanh chóng, Hiện đại.';
+
+# 🔤 Kiểu Chữ (Typography)
+
+Lucent UI sử dụng phông chữ **Inter** (một phông chữ sans-serif hiện đại từ Google Fonts) làm phông chữ chủ đạo cho toàn bộ hệ thống.
+
+**Font:** `Inter`, sans-serif
+<br />
+**Weights:** 400(regular), 500(medium), 700(bold)
+
+<br />
+
+## Kích cỡ chữ minh họa
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.s1),
+    Number(typography.size.s2),
+    Number(typography.size.s3),
+    Number(typography.size.m1),
+    Number(typography.size.l1),
+    Number(typography.size.l2),
+  ]}
+  fontWeight={typography.weight.regular}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>

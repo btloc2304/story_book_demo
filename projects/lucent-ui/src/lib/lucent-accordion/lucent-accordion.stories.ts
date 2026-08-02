@@ -10,7 +10,7 @@ const meta: Meta<LucentAccordionComponent> = {
     moduleMetadata({ imports: [CommonModule] }),
   ],
   parameters: {
-    design: { type: 'figma', url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI' },
+    design: { type: 'figma', url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI?node-id=4441-666&m=dev' },
   },
 };
 export default meta;

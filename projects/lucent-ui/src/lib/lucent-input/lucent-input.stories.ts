@@ -12,7 +12,7 @@ const meta: Meta<LucentInputComponent> = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI?node-id=940-1&p=f&m=dev', // Using the main node for demo
+      url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI?node-id=4431-243&m=dev',
     },
   },
 };
@@ -68,6 +68,9 @@ export const AccessibilityFail: Story = {
   args: {
     label: 'Low Contrast Label',
     placeholder: 'Hard to read',
+  },
+  parameters: {
+    a11y: { disable: true } // Disable so test-runner doesn't fail the CI pipeline, but keep for manual demo
   },
   // Injecting inline styles purely for demo purpose to fail a11y checks
   render: (args) => ({

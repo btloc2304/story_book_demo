@@ -16,7 +16,7 @@ const meta: Meta<LucentButtonComponent> = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI?node-id=940-1&p=f&m=dev',
+      url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI?node-id=4441-75&m=dev',
     },
   },
 };

@@ -12,7 +12,7 @@ const meta: Meta<LucentBadgeComponent> = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI',
+      url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI?node-id=4441-667&m=dev',
     },
   },
 };

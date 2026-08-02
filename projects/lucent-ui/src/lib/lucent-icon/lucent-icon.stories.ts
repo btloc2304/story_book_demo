@@ -10,7 +10,7 @@ const meta: Meta<LucentIconComponent> = {
     size: { control: 'select', options: ['small', 'medium', 'large'] },
   },
   parameters: {
-    design: { type: 'figma', url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI' },
+    design: { type: 'figma', url: 'https://www.figma.com/design/Njpq1ncXsldoHXqVOKgFWo/Lucent-UI?node-id=126-9&m=dev' },
   },
 };
 export default meta;

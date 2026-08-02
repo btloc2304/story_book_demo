@@ -9,7 +9,8 @@
     "test": "ng test",
     "storybook": "ng run lucent-ui:storybook",
     "build-storybook": "ng run lucent-ui:build-storybook",
-    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
+    "test-storybook": "test-storybook --config-dir projects/lucent-ui/.storybook"
   },
   "private": true,
   "dependencies": {
@@ -43,11 +44,14 @@
     "@storybook/angular": "8.6.18",
     "@storybook/blocks": "8.6.18",
     "@storybook/test": "8.6.18",
+    "@storybook/test-runner": "^0.24.4",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20",
     "@vitest/browser-playwright": "^4.1.10",
     "@vitest/coverage-v8": "^4.1.10",
+    "axe-playwright": "^2.2.2",
     "chromatic": "^18.1.0",
+    "esbuild": "^0.28.1",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
