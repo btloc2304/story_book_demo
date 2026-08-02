@@ -1,27 +1,39 @@
 import { Meta } from "@storybook/blocks";
 
-<Meta title="Lucent UI/Giới thiệu (Introduction)" />
+<Meta title="Lucent UI/Introduction" />
 
 <div className="sb-container">
   <div className='sb-section-title'>
-    # 🚀 Chào mừng đến với Lucent UI
+    # ✨ Welcome to Lucent UI
     
-    Bộ thư viện Giao diện Người dùng (UI Components) chuẩn mực dành riêng cho hệ sinh thái Angular, thiết kế theo ngôn ngữ hiện đại, nhanh nhẹn và sắc nét.
+    A premium Angular component library — meticulously crafted with modern design principles, powered by Figma tokens, and documented with interactive Storybook stories.
   </div>
 
   <div className="sb-section">
     <div className="sb-features-grid">
       <div className="sb-grid-item">
-        <h4 className="sb-section-item-heading">🎨 Tương thích Dark Mode & Light Mode</h4>
-        <p className="sb-section-item-paragraph">Hỗ trợ trọn vẹn chủ đề màu tối và màu sáng từ tận lõi SCSS với các hằng số màu thiết kế khoa học.</p>
+        <h4 className="sb-section-item-heading">🎨 Theming — Dark & Light</h4>
+        <p className="sb-section-item-paragraph">Full dark mode and light mode support, driven by a scientific SCSS design token system with consistent color palettes.</p>
       </div>
       <div className="sb-grid-item">
-        <h4 className="sb-section-item-heading">♿️ Accessibility (a11y) Compliant</h4>
-        <p className="sb-section-item-paragraph">Mỗi Component đều được thiết kế vượt qua các bài kiểm thử độ tương phản màu và trải nghiệm đọc của W3C.</p>
+        <h4 className="sb-section-item-heading">♿️ Accessibility First</h4>
+        <p className="sb-section-item-paragraph">Every component is designed to pass WCAG 2.1 color contrast and keyboard navigation requirements out of the box.</p>
       </div>
       <div className="sb-grid-item">
         <h4 className="sb-section-item-heading">🤖 Visual Regression Tested</h4>
-        <p className="sb-section-item-paragraph">Hệ thống Chromatic tự động chụp lại ảnh màn hình pixel-by-pixel để đảm bảo layout không bị vỡ sau mỗi đợt update.</p>
+        <p className="sb-section-item-paragraph">Chromatic automatically captures pixel-perfect screenshots on every commit to prevent unintended visual regressions.</p>
+      </div>
+      <div className="sb-grid-item">
+        <h4 className="sb-section-item-heading">🎯 Figma-Synced</h4>
+        <p className="sb-section-item-paragraph">Components are linked directly to their Figma design specs. Click the "Design" tab in any story to see the original design.</p>
+      </div>
+      <div className="sb-grid-item">
+        <h4 className="sb-section-item-heading">⚡ Standalone Components</h4>
+        <p className="sb-section-item-paragraph">Built with Angular standalone APIs — no NgModule boilerplate. Import only what you need, fully tree-shakable.</p>
+      </div>
+      <div className="sb-grid-item">
+        <h4 className="sb-section-item-heading">🚀 Auto-Deployed</h4>
+        <p className="sb-section-item-paragraph">Every push to master triggers CI/CD that builds and publishes this Storybook to GitHub Pages automatically.</p>
       </div>
     </div>
   </div>
@@ -35,7 +47,7 @@ import { Meta } from "@storybook/blocks";
   .sb-section-title {
     margin-bottom: 32px;
   }
-  .sb-section-title #-\\-chào-mừng-đến-với-lucent-ui {
+  .sb-section-title h1 {
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 8px;
@@ -55,6 +67,11 @@ import { Meta } from "@storybook/blocks";
     padding: 24px;
     border-radius: 8px;
     background: #f1f5f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    .sb-grid-item {
+      background: #1e293b;
+    }
   }
   `}
 </style>

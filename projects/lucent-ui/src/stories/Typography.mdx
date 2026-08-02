@@ -21,19 +21,19 @@ export const typography = {
   },
 };
 
-export const SampleText = 'Design System Lucent UI: Chuyên nghiệp, Nhanh chóng, Hiện đại.';
+export const SampleText = 'The quick brown fox jumps over the lazy dog.';
 
-# 🔤 Kiểu Chữ (Typography)
+# 🔤 Typography
 
-Lucent UI sử dụng phông chữ **Inter** (một phông chữ sans-serif hiện đại từ Google Fonts) làm phông chữ chủ đạo cho toàn bộ hệ thống.
+Lucent UI uses **Inter** — a modern, highly-legible sans-serif typeface from Google Fonts — as the primary font across all components.
 
-**Font:** `Inter`, sans-serif
+**Font Family:** `Inter`, sans-serif
 <br />
-**Weights:** 400(regular), 500(medium), 700(bold)
+**Weights:** 400 (Regular) · 500 (Medium) · 700 (Bold)
 
 <br />
 
-## Kích cỡ chữ minh họa
+## Type Scale
 
 <Typeset
   fontSizes={[
@@ -46,5 +46,30 @@ Lucent UI sử dụng phông chữ **Inter** (một phông chữ sans-serif hi�
   ]}
   fontWeight={typography.weight.regular}
   sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+<br />
+
+## Font Weights
+
+<Typeset
+  fontSizes={[Number(typography.size.m1)]}
+  fontWeight={typography.weight.regular}
+  sampleText="Regular 400 — Used for body text and descriptions."
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.m1)]}
+  fontWeight={typography.weight.medium}
+  sampleText="Medium 500 — Used for labels and subtle emphasis."
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.m1)]}
+  fontWeight={typography.weight.bold}
+  sampleText="Bold 700 — Used for headings and strong emphasis."
   fontFamily={typography.type.primary}
 />
