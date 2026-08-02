@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { LucentProgressBarComponent } from './lucent-progress-bar.component';
 
 const meta: Meta<LucentProgressBarComponent> = {
-  title: 'Components/Progress Bar',
+  title: 'Lucent UI/Progress Bar',
   component: LucentProgressBarComponent,
   tags: ['autodocs'],
   argTypes: {

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { LucentSliderComponent } from './lucent-slider.component';
 
 const meta: Meta<LucentSliderComponent> = {
-  title: 'Components/Slider',
+  title: 'Lucent UI/Slider',
   component: LucentSliderComponent,
   tags: ['autodocs'],
   argTypes: {

@@ -4,7 +4,7 @@ import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 
 const meta: Meta<LucentDialogComponent> = {
-  title: 'Components/Dialog',
+  title: 'Lucent UI/Dialog',
   component: LucentDialogComponent,
   tags: ['autodocs'],
   decorators: [

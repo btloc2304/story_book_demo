@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { LucentMenuComponent } from './lucent-menu.component';
 
 const meta: Meta<LucentMenuComponent> = {
-  title: 'Components/Menu',
+  title: 'Lucent UI/Menu',
   component: LucentMenuComponent,
   tags: ['autodocs'],
   argTypes: {

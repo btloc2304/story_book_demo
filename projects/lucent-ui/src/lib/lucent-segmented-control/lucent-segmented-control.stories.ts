@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { LucentSegmentedControlComponent } from './lucent-segmented-control.component';
 
 const meta: Meta<LucentSegmentedControlComponent> = {
-  title: 'Components/Segmented Control',
+  title: 'Lucent UI/Segmented Control',
   component: LucentSegmentedControlComponent,
   tags: ['autodocs'],
   parameters: {
