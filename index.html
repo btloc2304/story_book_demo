@@ -74,13 +74,6 @@
     
     <link href="./sb-addons/themes-13/manager-bundle.js" rel="modulepreload" />
       <style>
-  .sb-custom-tools-wrapper {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 4px !important;
-    flex-shrink: 0 !important;
-  }
-  
   .cf-logout-btn {
     display: inline-flex !important;
     align-items: center !important;
@@ -94,14 +87,19 @@
     background: transparent !important;
     border: none !important;
     cursor: pointer !important;
+    outline: none !important;
     text-decoration: none !important;
     transition: color 0.15s ease, background-color 0.15s ease !important;
     padding: 0 !important;
-    margin: 0 !important;
+    margin-left: 4px !important;
+    z-index: 100 !important;
   }
   .cf-logout-btn:hover {
     color: #f43f5e !important;
     background-color: rgba(244, 63, 94, 0.12) !important;
+  }
+  .cf-logout-btn:active {
+    transform: scale(0.95) !important;
   }
   .cf-logout-btn svg {
     width: 15px !important;
@@ -111,6 +109,7 @@
     stroke-linecap: round !important;
     stroke-linejoin: round !important;
     fill: none !important;
+    pointer-events: none !important;
   }
 </style>
 <script>
@@ -125,24 +124,16 @@
       if (header) {
         const gearBtn = header.querySelector('button');
         if (gearBtn) {
-          // Ensure parent header doesn't wrap
+          // Keep header on one line
           header.style.display = 'flex';
           header.style.alignItems = 'center';
           header.style.justifyContent = 'space-between';
           header.style.flexWrap = 'nowrap';
 
-          let toolsWrapper = header.querySelector('.sb-custom-tools-wrapper');
-          if (!toolsWrapper) {
-            toolsWrapper = document.createElement('div');
-            toolsWrapper.className = 'sb-custom-tools-wrapper';
-            gearBtn.parentNode.insertBefore(toolsWrapper, gearBtn);
-            toolsWrapper.appendChild(gearBtn);
-          }
-          
-          const btn = document.createElement('a');
+          const btn = document.createElement('button');
           btn.id = 'cf-logout-btn';
           btn.className = 'cf-logout-btn';
-          btn.href = '/cdn-cgi/access/logout';
+          btn.type = 'button';
           btn.title = 'Đăng xuất khỏi Cloudflare Access';
           btn.setAttribute('aria-label', 'Đăng xuất');
           btn.innerHTML = `
@@ -153,7 +144,20 @@
             </svg>
           `;
           
-          toolsWrapper.appendChild(btn);
+          // Block all event bubbling to Storybook's React/Radix popover handlers
+          ['click', 'mousedown', 'mouseup', 'pointerdown', 'pointerup', 'focus'].forEach(function(eventType) {
+            btn.addEventListener(eventType, function(e) {
+              e.stopPropagation();
+              e.stopImmediatePropagation();
+              if (eventType === 'click') {
+                e.preventDefault();
+                window.location.href = '/cdn-cgi/access/logout';
+              }
+            }, true); // Use capture phase to intercept before React
+          });
+
+          // Insert directly next to the gear button without mutating gearBtn's parent hierarchy
+          gearBtn.insertAdjacentElement('afterend', btn);
         }
       }
     }
