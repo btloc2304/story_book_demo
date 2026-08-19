@@ -74,34 +74,43 @@
     
     <link href="./sb-addons/themes-13/manager-bundle.js" rel="modulepreload" />
       <style>
+  .sb-custom-tools-wrapper {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    flex-shrink: 0 !important;
+  }
+  
   .cf-logout-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.6);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: color 0.15s ease, background-color 0.15s ease;
-    margin-left: 4px;
-    position: relative;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    border-radius: 4px !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transition: color 0.15s ease, background-color 0.15s ease !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   .cf-logout-btn:hover {
-    color: #f43f5e;
-    background-color: rgba(244, 63, 94, 0.12);
+    color: #f43f5e !important;
+    background-color: rgba(244, 63, 94, 0.12) !important;
   }
   .cf-logout-btn svg {
-    width: 14px;
-    height: 14px;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
+    width: 15px !important;
+    height: 15px !important;
+    stroke: currentColor !important;
+    stroke-width: 2 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+    fill: none !important;
   }
 </style>
 <script>
@@ -109,31 +118,43 @@
     function injectLogoutButton() {
       if (document.getElementById('cf-logout-btn')) return;
       
-      // Find the settings icon / header tools container in Storybook sidebar
       const header = document.querySelector('[data-testid="sidebar-header"]') || 
                      document.querySelector('.sidebar-header') ||
                      document.querySelector('header');
                      
       if (header) {
-        // Find the right-side container (where the gear icon is)
-        const gearBtn = header.querySelector('button') || header.querySelector('a') || header.lastElementChild;
-        const targetContainer = gearBtn ? gearBtn.parentElement : header;
-        
-        const btn = document.createElement('a');
-        btn.id = 'cf-logout-btn';
-        btn.className = 'cf-logout-btn';
-        btn.href = '/cdn-cgi/access/logout';
-        btn.title = 'Đăng xuất khỏi Cloudflare Access';
-        btn.setAttribute('aria-label', 'Đăng xuất');
-        btn.innerHTML = `
-          <svg viewBox="0 0 24 24">
-            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-            <polyline points="16 17 21 12 16 7"></polyline>
-            <line x1="21" y1="12" x2="9" y2="12"></line>
-          </svg>
-        `;
-        
-        targetContainer.appendChild(btn);
+        const gearBtn = header.querySelector('button');
+        if (gearBtn) {
+          // Ensure parent header doesn't wrap
+          header.style.display = 'flex';
+          header.style.alignItems = 'center';
+          header.style.justifyContent = 'space-between';
+          header.style.flexWrap = 'nowrap';
+
+          let toolsWrapper = header.querySelector('.sb-custom-tools-wrapper');
+          if (!toolsWrapper) {
+            toolsWrapper = document.createElement('div');
+            toolsWrapper.className = 'sb-custom-tools-wrapper';
+            gearBtn.parentNode.insertBefore(toolsWrapper, gearBtn);
+            toolsWrapper.appendChild(gearBtn);
+          }
+          
+          const btn = document.createElement('a');
+          btn.id = 'cf-logout-btn';
+          btn.className = 'cf-logout-btn';
+          btn.href = '/cdn-cgi/access/logout';
+          btn.title = 'Đăng xuất khỏi Cloudflare Access';
+          btn.setAttribute('aria-label', 'Đăng xuất');
+          btn.innerHTML = `
+            <svg viewBox="0 0 24 24">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          `;
+          
+          toolsWrapper.appendChild(btn);
+        }
       }
     }
 
