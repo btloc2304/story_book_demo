@@ -74,6 +74,24 @@
     
     <link href="./sb-addons/themes-13/manager-bundle.js" rel="modulepreload" />
       <style>
+  .sb-tools-wrapper {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+    position: absolute !important;
+    top: 14px !important;
+    right: 12px !important;
+    z-index: 100 !important;
+  }
+  
+  .sb-tools-wrapper button,
+  .sb-tools-wrapper a {
+    position: static !important;
+    margin: 0 !important;
+  }
+
   .cf-logout-btn {
     display: inline-flex !important;
     align-items: center !important;
@@ -91,8 +109,6 @@
     text-decoration: none !important;
     transition: color 0.15s ease, background-color 0.15s ease !important;
     padding: 0 !important;
-    margin-left: 4px !important;
-    z-index: 100 !important;
   }
   .cf-logout-btn:hover {
     color: #f43f5e !important;
@@ -124,11 +140,15 @@
       if (header) {
         const gearBtn = header.querySelector('button');
         if (gearBtn) {
-          // Keep header on one line
-          header.style.display = 'flex';
-          header.style.alignItems = 'center';
-          header.style.justifyContent = 'space-between';
-          header.style.flexWrap = 'nowrap';
+          header.style.position = 'relative';
+
+          let toolsWrapper = header.querySelector('.sb-tools-wrapper');
+          if (!toolsWrapper) {
+            toolsWrapper = document.createElement('div');
+            toolsWrapper.className = 'sb-tools-wrapper';
+            gearBtn.parentNode.insertBefore(toolsWrapper, gearBtn);
+            toolsWrapper.appendChild(gearBtn);
+          }
 
           const btn = document.createElement('button');
           btn.id = 'cf-logout-btn';
@@ -144,7 +164,7 @@
             </svg>
           `;
           
-          // Block all event bubbling to Storybook's React/Radix popover handlers
+          // Block event bubbling to Storybook settings menu & trigger immediate logout
           ['click', 'mousedown', 'mouseup', 'pointerdown', 'pointerup', 'focus'].forEach(function(eventType) {
             btn.addEventListener(eventType, function(e) {
               e.stopPropagation();
@@ -153,11 +173,10 @@
                 e.preventDefault();
                 window.location.href = '/cdn-cgi/access/logout';
               }
-            }, true); // Use capture phase to intercept before React
+            }, true);
           });
 
-          // Insert directly next to the gear button without mutating gearBtn's parent hierarchy
-          gearBtn.insertAdjacentElement('afterend', btn);
+          toolsWrapper.appendChild(btn);
         }
       }
     }
